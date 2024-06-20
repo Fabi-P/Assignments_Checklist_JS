@@ -1,0 +1,61 @@
+/* general style */
+* {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* utility classes */
+.hidden {
+  display: none;
+}
+
+.btn {
+  border-radius: 8px;
+  border: none;
+  padding: 4px 8px;
+  box-shadow: 2px 2px 2px lightgrey
+}
+
+.btn:hover {
+  background-color: yellow;
+}
+
+/* header style */
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+  justify-content: space-between;
+}
+
+.new-assignment {
+  display: flex;
+  gap: 10px;
+  justify-items: center;
+}
+
+/* main style */
+main {
+  max-width: 1200px;
+  padding: 30px;
+}
+
+/* task box style */
+.task-box {
+  padding: 10px;
+}
+
+.assignment-title-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.task-content {
+  visibility: collapse;
+}
+
+thead {
+  display: none;
+}

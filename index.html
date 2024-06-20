@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Assignments checklist</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<header>
+  <h1>Assignments checklist</h1>
+  <div class="new-assignment">
+      <input id="new-assignment-input" 
+             type="text" 
+             placeholder="New assignment">
+      <button type="button" 
+              class="btn" 
+              id="new-assignment-btn"
+              onclick="addAssignment()">
+        Add</button>
+  </div>
+  <button class="btn"
+          type="button"
+          id="erase-all">Free Local Storage</button>
+</header>
+
+<main>
+  <ul id="all-assignments">
+<!--  template assignment    -->
+    <li class="assignment-box clone hidden"
+        onmouseenter="untoggle(event)"
+        onmouseleave="toggle(event)">
+      
+      <div class="assignment-title-box">
+        <h2 class="assignment-title">Assignment clone</h2>
+        <button type="button" 
+                class="btn assignment-delete-btn"
+                onclick="deleteAssignment(event)">Delete</button>
+      </div>
+      
+      <table class="task-box">
+        
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Implementation</th>
+            <th>Done</th>
+          </tr>
+        </thead>
+        
+        <tbody class="table-body">
+<!--   Table row to add new tasks         -->
+          <tr class="add-task">
+              <td>
+                  <input type="text" 
+                         placeholder="New task"
+                         class="task">
+              </td>
+              <td>
+                  <input type="text"
+                         placeholder="Implementation"
+                         class="implementation">
+              </td>
+              <td>
+                  <!--   placeholder to keep layout  -->
+              </td>
+              <td>
+                  <button onclick="saveTask(event)"
+                          class="btn">Add</button>
+              </td>
+            </tr>
+<!--   Table row that is copied and filled dynamically   -->
+          <tr class="task-row clone hidden">
+            <td class="task"></td>
+            <td class="implementation"></td>
+            <td class="done">
+              <input type="checkbox"       
+                     class="checkbox"
+                     onchange="finishedTask(event)">
+            </td>
+            <td>
+              <button type="button"
+                      class="btn"
+                      onclick="removeTask(event)"
+                      >Remove</button>
+            </td>
+          </tr>
+        </tbody>
+        
+      </table>
+    </li>
+  </ul>
+</main>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
